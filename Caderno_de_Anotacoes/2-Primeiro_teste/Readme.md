@@ -4,32 +4,8 @@ A partir do momento q vc está com `yarn test` rodando, toda vez q vc salva o
 código, ele refaz o teste automaticamente. Assim, vc consegue ir vendo o q falta
 pro teste passar.
 
-## src/components/TechList/index.js
-
-```js
-import React, { useState } from 'react';
-
-// import { Container } from './styles';
-
-function TechList() {
-  const [techs, setTechs] = useState([]);
-
-  function handleAddTech() {
-    setTechs([...techs, 'Node.js']);
-  }
-
-  return (
-    <div>
-      <ul data-testid="tech-list">
-        {techs.map(tech => <li key={tech}>{tech}</li>)}
-      </ul>
-      <button onClick={handleAddTech}>Adicionar</button>
-    </div>
-  );
-}
-
-export default TechList;
-```
+No teste abaixo, quero q ao clicar no botão Adicionar, uma lista contenha a
+palavra 'Node.js'.
 
 ## __tests__/components/TechList.test.js
 
@@ -69,3 +45,31 @@ describe('TechList component', () => {
   })
 })
 ```
+
+## src/components/TechList/index.js
+
+```js
+import React, { useState } from 'react';
+
+// import { Container } from './styles';
+
+function TechList() {
+  const [techs, setTechs] = useState([]);
+
+  function handleAddTech() {
+    setTechs([...techs, 'Node.js']);
+  }
+
+  return (
+    <div>
+      <ul data-testid="tech-list">
+        {techs.map(tech => <li key={tech}>{tech}</li>)}
+      </ul>
+      <button onClick={handleAddTech}>Adicionar</button>
+    </div>
+  );
+}
+
+export default TechList;
+```
+
