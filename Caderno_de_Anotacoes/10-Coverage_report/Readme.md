@@ -1,3 +1,8 @@
+# Coverage report
+
+## package.json
+
+```diff
 {
   "name": "rocketseat-testes-reactjs-reactnative",
   "version": "0.1.0",
@@ -17,7 +22,6 @@
     "start": "react-app-rewired start",
     "build": "react-app-rewired build",
     "test": "react-app-rewired test",
-    "coverage": "react-app-rewired test --coverage --watchAll=false",
     "eject": "react-scripts eject"
   },
   "jest": {
@@ -35,13 +39,7 @@
     "moduleNameMapper": {
       "^~/(.*)": "<rootDir>/src/$1"
     },
-    "resetMocks": false,
-    "collectCoverage": true,
-    "collectCoverageFrom": [
-      "!<rootDir>/src/index.js",
-      "!<rootDir>/src/services/api.js"
-    ],
-    "coverageDirectory": "__tests__/coverage"
+    "resetMocks": false
   },
   "browserslist": {
     "production": [
@@ -64,3 +62,4 @@
     "react-app-rewired": "^2.1.8"
   }
 }
+```
