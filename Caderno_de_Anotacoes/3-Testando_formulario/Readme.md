@@ -2,7 +2,7 @@
 
 O app terá um input, onde o usuário insere a tecnologia e adiciona.
 
-## __tests__/components/TechList.test.js
+## \__tests__/components/TechList.test.js
 
 ```diff
 import React from 'react';

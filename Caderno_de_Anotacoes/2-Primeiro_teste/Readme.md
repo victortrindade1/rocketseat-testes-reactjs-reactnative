@@ -7,7 +7,7 @@ pro teste passar.
 No teste abaixo, quero q ao clicar no botão Adicionar, uma lista contenha a
 palavra 'Node.js'.
 
-## __tests__/components/TechList.test.js
+## \__tests__/components/TechList.test.js
 
 O `render` é o responsável por renderizar na DOM virtual, é como um HTML fake.
 Dele, pegaremos o `getByText` e o `getByTestId`.

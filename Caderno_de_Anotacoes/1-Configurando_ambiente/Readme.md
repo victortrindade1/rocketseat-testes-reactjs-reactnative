@@ -127,7 +127,7 @@ Este arquivo é pro vscode não se perder nas importações.
 
 ## Testando
 
-### __tests__/App.test.js
+### \__tests__/App.test.js
 
 O `import App` é só pra testar se o `moduleNameMapper` está funcionando no
 package.json.

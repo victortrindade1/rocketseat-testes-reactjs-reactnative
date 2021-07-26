@@ -23,11 +23,13 @@
     ],
     "setupFilesAfterEnv": [
       "@testing-library/react",
-      "@testing-library/jest-dom/extend-expect"
+      "@testing-library/jest-dom/extend-expect",
+      "jest-localstorage-mock"
     ],
     "moduleNameMapper": {
       "^~/(.*)": "<rootDir>/src/$1"
-    }
+    },
+    "resetMocks": false
   },
   "browserslist": {
     "production": [
@@ -45,6 +47,7 @@
     "@testing-library/jest-dom": "^5.9.0",
     "@testing-library/react": "^10.2.1",
     "@types/jest": "^26.0.24",
+    "jest-localstorage-mock": "^2.4.14",
     "react-app-rewired": "^2.1.8"
   }
 }
