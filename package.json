@@ -1,5 +1,28 @@
 {
   "name": "rocketseat-testes-reactjs-reactnative",
+  "jest": {
+    "roots": [
+      "<rootDir>/__tests__/"
+    ],
+    "testMatch": [
+      "**/__tests__/**/*.test.js"
+    ],
+    "setupFilesAfterEnv": [
+      "@testing-library/react",
+      "@testing-library/jest-dom/extend-expect",
+      "jest-localstorage-mock"
+    ],
+    "moduleNameMapper": {
+      "^~/(.*)": "<rootDir>/src/$1"
+    },
+    "resetMocks": false,
+    "collectCoverage": true,
+    "coveragePathIgnorePatterns": [
+      "src/index.js",
+      "src/services/api.js"
+    ],
+    "coverageDirectory": "__tests__/coverage"
+  },
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -19,29 +42,6 @@
     "test": "react-app-rewired test",
     "coverage": "react-app-rewired test --coverage --watchAll=false",
     "eject": "react-scripts eject"
-  },
-  "jest": {
-    "roots": [
-      "<rootDir>/__tests__/"
-    ],
-    "testMatch": [
-      "**/__tests__/**/*.test.js"
-    ],
-    "setupFilesAfterEnv": [
-      "@testing-library/react",
-      "@testing-library/jest-dom/extend-expect",
-      "jest-localstorage-mock"
-    ],
-    "moduleNameMapper": {
-      "^~/(.*)": "<rootDir>/src/$1"
-    },
-    "resetMocks": false,
-    "collectCoverage": true,
-    "collectCoverageFrom": [
-      "!<rootDir>/src/index.js",
-      "!<rootDir>/src/services/api.js"
-    ],
-    "coverageDirectory": "__tests__/coverage"
   },
   "browserslist": {
     "production": [
