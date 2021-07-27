@@ -22,6 +22,7 @@
     "start": "react-app-rewired start",
     "build": "react-app-rewired build",
     "test": "react-app-rewired test",
++    "coverage": "react-app-rewired test --coverage --watchAll=false",
     "eject": "react-scripts eject"
   },
   "jest": {
@@ -39,7 +40,13 @@
     "moduleNameMapper": {
       "^~/(.*)": "<rootDir>/src/$1"
     },
-    "resetMocks": false
+    "resetMocks": false,
++    "collectCoverage": true,
++    "coveragePathIgnorePatterns": [
++      "src/index.js",
++      "src/services/api.js"
++    ],
++    "coverageDirectory": "__tests__/coverage"
   },
   "browserslist": {
     "production": [
@@ -62,4 +69,29 @@
     "react-app-rewired": "^2.1.8"
   }
 }
+```
+
+## \__tests__/store/reducers/techs.test.js
+
+Aqui o professor vai mexer pq qnd ele rodou o `coverage report`, o jest mostrou
+que umas linhas não são lidas: o INITIAL STATE e o case default. Isto pq alguma
+action vazia é disparada e o reducer cai no default. 
+
+```diff
+import reducer, { INITIAL_STATE } from '~/store/modules/techs/reducer';
+import * as Techs from '~/store/modules/techs/actions';
+
+describe('Techs reducer', () => {
++  it('DEFAULT', () => {
++    const state = reducer(undefined, {});
++
++    expect(state).toStrictEqual(INITIAL_STATE);
++  });
+
+  it('ADD_TECH', () => {
+    const state = reducer(INITIAL_STATE, Techs.addTech('Node.js'));
+
+    expect(state).toStrictEqual(['Node.js']);
+  })
+});
 ```
